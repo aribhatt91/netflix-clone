@@ -7,12 +7,30 @@
         @apply bg-[#141414] text-white
     }
     header {
-        @apply fixed top-0 left-0 z-50 flex w-full items-center justify-between px-4 py-4 transition-all lg:px-10 lg:py-6
+        @apply fixed top-0 left-0 z-50 flex w-full items-center justify-between px-4 py-4 transition-all duration-700 lg:px-[4%] lg:py-6
     }
 }
 
 @layer components {
     .header__link {
         @apply cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
+    }
+    .btn {
+        @apply rounded border-0 flex justify-center p-[0.8rem] cursor-pointer items-center min-h-[32px] max-h-[42px] whitespace-nowrap break-words
+    }
+    .btn--primary {
+        @apply bg-white text-black
+    }
+    .btn--secondary {
+        @apply bg-[rgba(109,109,110,.7)] text-white
+    }
+    .btn--icon {
+        @apply pr-[2.4rem] pl-[2rem]
+    }
+    .btn__icon {
+        @apply mr-[1rem] h-[26px] w-[26px] inline-flex items-center justify-end text-inherit text-[1.25rem]
+    }
+    .btn__text {
+        @apply text-[1.6rem] font-semibold leading-9 text-inherit
     }
 }

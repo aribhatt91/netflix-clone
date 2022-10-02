@@ -4,6 +4,7 @@ export interface IGenre {
   }
   
   export interface IMovie {
+    adult: boolean
     title: string
     backdrop_path: string
     media_type?: string
@@ -15,6 +16,7 @@ export interface IGenre {
     origin_country: string[]
     original_language: string
     original_name: string
+    original_title: string
     overview: string
     popularity: number
     poster_path: string

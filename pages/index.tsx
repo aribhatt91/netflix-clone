@@ -19,7 +19,7 @@ interface Props {
 
 const Home = ({netflixOriginals}: Props) => {
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[#140vh]">
+    <div className="relative h-screen bg-gradient-to-b from-gray-900/5 to-[#010511] lg:h-[57vw]">
       <Head>
         <title>Netflix Clone</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,7 +27,9 @@ const Home = ({netflixOriginals}: Props) => {
       {/* header */}
       <Header />
       <main>
-        <Banner netflixOriginals={netflixOriginals} />
+        <section className='billboard relative w-full h-[100vh] md:h-[57vw]'>
+          <Banner netflixOriginals={netflixOriginals} />
+        </section>
         {/* Banner */}
         <section>
           {/* Row */}
@@ -40,7 +42,7 @@ const Home = ({netflixOriginals}: Props) => {
 
       {/* modal */}
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
+      <footer className="flex h-24 w-full items-center justify-center bg-black">
       </footer>
     </div>
   )
