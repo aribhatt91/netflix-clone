@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import Row from '../components/Row'
+import SkeletonRow from '../components/SkeletonRow'
 import { IMovie } from '../typings'
 import requests from '../utils/requests'
 
@@ -23,15 +25,21 @@ const Home = ({netflixOriginals}: Props) => {
       <Head>
         <title>Netflix Clone</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Head>
       {/* header */}
       <Header />
       <main>
         <section className='billboard relative w-full h-[100vh] md:h-[57vw]'>
           <Banner netflixOriginals={netflixOriginals} />
+          <div className='absolute bottom-0 w-full left-0'>
+            <Row title='Popular on Netflix' movies={netflixOriginals} />
+          </div>
         </section>
         {/* Banner */}
         <section>
+          <SkeletonRow />
           {/* Row */}
           {/* Row */}
           {/* Row */}

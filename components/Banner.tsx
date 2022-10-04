@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { baseUrl } from '../constants/movie';
+import { baseUrl } from '../constants/movie'
 import { IMovie } from '../typings'
 import {FaPlay} from 'react-icons/fa'
+import { InformationCircleIcon } from '@heroicons/react/outline';
 interface Props {
     netflixOriginals: IMovie[]
 }
@@ -33,6 +34,9 @@ function Banner({ netflixOriginals }: Props) {
                         <span className='btn__text'>Play</span>
                     </button>
                     <button className='btn btn--icon btn--secondary'>
+                        <span className="btn__icon">
+                            <InformationCircleIcon />
+                        </span>
                         <span className='btn__text'>More info</span>
                     </button>
                 </div>

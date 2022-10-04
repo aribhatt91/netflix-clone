@@ -16,7 +16,7 @@
         @apply cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
     }
     .btn {
-        @apply rounded border-0 flex justify-center p-[0.8rem] cursor-pointer items-center min-h-[32px] max-h-[42px] whitespace-nowrap break-words
+        @apply rounded border-0 flex justify-center p-[0.8rem] cursor-pointer items-center min-h-[32px] whitespace-nowrap break-words hover:opacity-80 transition-all duration-200
     }
     .btn--primary {
         @apply bg-white text-black
@@ -28,9 +28,62 @@
         @apply pr-[2.4rem] pl-[2rem]
     }
     .btn__icon {
-        @apply mr-[1rem] h-[26px] w-[26px] inline-flex items-center justify-end text-inherit text-[1.25rem]
+        @apply mr-[.75rem] h-[26px] w-[26px] inline-flex items-center justify-end text-inherit text-[1.25rem]
     }
     .btn__text {
-        @apply text-[1.6rem] font-semibold leading-9 text-inherit
+        @apply text-[1.1rem] font-semibold leading-5 text-inherit
+    }
+
+    .movie-cards {
+
+    }
+    .card {
+        @apply mr-2 ml-2 bg-[#222] first:ml-0
+    }
+    .movie-cards .slick-list {
+        @apply z-[2] overflow-visible
+    }
+    .movie-cards .slick-arrow {
+        @apply z-[3]
+    }
+    .movie-cards .slick-arrow::before {
+        @apply hidden
+    }
+    .movie-cards .slick-dots {
+        @apply w-auto right-[4%] top-[-1.5rem] bottom-auto inline-flex
+    }
+    .movie-cards .slick-dots li {
+        @apply m-0 w-auto h-auto inline-flex
+    }
+    .movie-cards .slick-dots li button {
+        @apply h-[2px] w-[12px] inline-block bg-[#4d4d4d] p-0 ml-[4px]
+    }
+    .movie-cards .slick-dots li.slick-active button {
+        @apply bg-[#aaa]
+    }
+    .movie-cards .slick-dots li button:before {
+        @apply hidden
+    }
+
+    .see-all-link {
+        @apply cursor-pointer inline-block mr-[0px] max-w-0 opacity-0 whitespace-nowrap transition-all duration-1000
+    } 
+    .see-all-arrow {
+        @apply transition-opacity duration-[1250ms]
+    }
+    .movie-cards-heading > div {
+        @apply transition-all duration-1000
+    }
+    .movie-cards-heading:hover > div {
+        @apply ml-4
+    }
+    .movie-cards-heading:hover > div > .see-all-link {
+        @apply opacity-100 max-w-[100px]
+    }
+    .movie-cards-heading:hover > div > .see-all-arrow {
+        @apply scale-75 opacity-100
+    }
+    .slick-arrow.slick-disabled.flex {
+        @apply hidden
     }
 }
