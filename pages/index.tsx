@@ -7,6 +7,7 @@ import Row from '../components/Row'
 import SkeletonRow from '../components/SkeletonRow'
 import { IMovie } from '../typings'
 import requests from '../utils/requests'
+import { useState, useRef, useEffect } from 'react'
 
 interface Props {
   netflixOriginals: IMovie[],
@@ -19,7 +20,8 @@ interface Props {
   documentaries: IMovie[],
 }
 
-const Home = ({netflixOriginals}: Props) => {
+const Home = ({netflixOriginals, trendingNow, topRated}: Props) => {
+  const actionMoviesRef = useRef<any>(null);
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/5 to-[#010511] lg:h-[57vw]">
       <Head>
@@ -39,7 +41,9 @@ const Home = ({netflixOriginals}: Props) => {
         </section>
         {/* Banner */}
         <section>
-          <SkeletonRow />
+          <Row title='Trending now' movies={trendingNow} />
+          <Row title='Top rated' movies={topRated} />
+          <SkeletonRow ref={actionMoviesRef} />
           {/* Row */}
           {/* Row */}
           {/* Row */}

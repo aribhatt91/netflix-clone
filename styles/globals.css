@@ -86,4 +86,8 @@
     .slick-arrow.slick-disabled.flex {
         @apply hidden
     }
+
+    .input {
+        @apply w-full rounded border-0 min-h-[40px] pl-5 pr-5 bg-[#333] placeholder-[gray] focus:border-0 focus:outline-none focus:bg-[#454545]
+    }
 }

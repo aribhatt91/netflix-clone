@@ -1,5 +1,6 @@
 interface Props {
-    className: string
+    className?: string
+    ref?: any
 }
 const Card = (props: Props) => {
     return (
@@ -11,7 +12,7 @@ const Card = (props: Props) => {
     )
 }
 
-function SkeletonRow() {
+function SkeletonRow(props: Props) {
   return (
     <div className="overflow-hidden mt-10">
         <div className="flex items-center mb-6 cursor-pointer">
