@@ -8,6 +8,10 @@ import SkeletonRow from '../components/SkeletonRow'
 import { IMovie } from '../typings'
 import requests from '../utils/requests'
 import { useState, useRef, useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
+import { modalState, previewMode } from '../atoms/modal.atom'
+import DetailViewModal from '../components/DetailViewModal'
+import PreviewModal from '../components/PreviewModal'
 
 interface Props {
   netflixOriginals: IMovie[],
@@ -21,7 +25,14 @@ interface Props {
 }
 
 const Home = ({netflixOriginals, trendingNow, topRated}: Props) => {
-  const actionMoviesRef = useRef<any>(null);
+  const showDetailView = useRecoilValue(modalState);
+  const showPreview = useRecoilValue(previewMode)
+  const skeletonRef1 = useRef<any>(null);
+
+  useEffect(() => {
+    /* Add intersection observers */
+  }, [skeletonRef1])
+
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/5 to-[#010511] lg:h-[57vw]">
       <Head>
@@ -43,7 +54,11 @@ const Home = ({netflixOriginals, trendingNow, topRated}: Props) => {
         <section>
           <Row title='Trending now' movies={trendingNow} />
           <Row title='Top rated' movies={topRated} />
-          <SkeletonRow ref={actionMoviesRef} />
+          <div className='w-full' ref={skeletonRef1}>
+            <SkeletonRow />
+            <SkeletonRow />
+          </div>
+          
           {/* Row */}
           {/* Row */}
           {/* Row */}
@@ -52,7 +67,13 @@ const Home = ({netflixOriginals, trendingNow, topRated}: Props) => {
         </section>
       </main>
 
-      {/* modal */}
+      {/* modal */
+        showDetailView && <DetailViewModal />
+      }
+
+      {
+        showPreview && <PreviewModal />
+      }
 
       <footer className="flex h-24 w-full items-center justify-center bg-black">
       </footer>

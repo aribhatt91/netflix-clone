@@ -5,8 +5,8 @@ interface Props {
 const Card = (props: Props) => {
     return (
         <div className={`${props.className || ""}`}>
-            <div className={`card`}>
-                <div className="relative w-full pb-0 pt-[56.25%] rounded cursor-pointer"></div>
+            <div className={`card rounded overflow-hidden`}>
+                <div className="relative w-full pb-0 pt-[142%] md:pt-[56.25%] cursor-pointer"></div>
             </div>
         </div>
     )

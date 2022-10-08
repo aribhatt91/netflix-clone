@@ -23,17 +23,17 @@ function Banner({ netflixOriginals }: Props) {
             <div className='absolute top-0 left-0 -z-10 h-full w-full'>
                 <Image src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`} layout="fill" objectFit='cover' />
             </div>
-            <div className='absolute mt-[80px] flex flex-col left-[4%] z-10 w-[75%] md:w-[66%] lg:w-[40%] bottom-[30%] justify-end'>
+            <div className='absolute mt-[80px] flex flex-col left-[4%] right-[4%] z-10 md:w-[75%] lg:w-[40%] bottom-[30%] justify-end'>
                 <h1 className='text-2xl md:text-4xl lg:text-7xl mb-6'>{movie?.title || movie?.name || movie?.original_name || movie?.original_title}</h1>
-                <p className='text-[1.25rem] mb-6'>{movie?.overview}</p>
+                <p className='hidden lg:block text-[1.25rem] mb-6'>{movie?.overview}</p>
                 <div className='flex'>
-                    <button className='btn btn--icon btn--primary mr-4'>
+                    <button className='btn btn--icon btn--primary mr-4 flex-1 sm:flex-none'>
                         <span className="btn__icon">
                             <FaPlay />
                         </span>
                         <span className='btn__text'>Play</span>
                     </button>
-                    <button className='btn btn--icon btn--secondary'>
+                    <button className='btn btn--icon btn--secondary flex-1 sm:flex-none'>
                         <span className="btn__icon">
                             <InformationCircleIcon />
                         </span>
